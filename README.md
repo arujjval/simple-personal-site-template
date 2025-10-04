@@ -34,7 +34,7 @@ Follow these three steps to launch your portfolio live in minutes:
 
 ## ❤️ Show Your Support
 
-This template is **completely free and open-source** under the MIT License. If this code saves you time and helps you create an awesome site, you can show your appreciation and help support its maintenance by buying me a coffee!
+If you liked it, you can buy me a coffee!
 
 [![Buy Me A Coffee](https://img.buymeacoffee.com/button-api/?text=Buy%20me%20a%20coffee&emoji=&slug=arujjval&button_colour=FFDD00&font_colour=000000&font_family=Lato&outline_colour=000000&coffee_colour=ffffff)](https://www.buymeacoffee.com/arujjval)
 
