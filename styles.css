@@ -1,0 +1,393 @@
+/* CSS Custom Properties for Monotonic Theme System */
+:root {
+    /* Light Theme - Monotonic Gray Palette */
+    --bg-primary: #ffffff;
+    --bg-secondary: #f8f9fa;
+    --bg-gradient: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+    --text-primary: #1a1a1a;
+    --text-secondary: #4a4a4a;
+    --text-muted: #6b6b6b;
+    --accent-primary: #2563eb;
+    --accent-secondary: #3b82f6;
+    --accent-gradient: linear-gradient(90deg, #2563eb, #3b82f6);
+    --border-color: rgba(37, 99, 235, 0.1);
+    --shadow-light: rgba(0, 0, 0, 0.05);
+    --shadow-medium: rgba(0, 0, 0, 0.1);
+    --glass-bg: rgba(255, 255, 255, 0.8);
+    --glass-border: rgba(37, 99, 235, 0.05);
+    --accent-light: rgba(37, 99, 235, 0.05);
+    --accent-medium: rgba(37, 99, 235, 0.1);
+}
+
+[data-theme="dark"] {
+    /* Dark Theme - Monotonic Gray Palette */
+    --bg-primary: #0a0a0a;
+    --bg-secondary: #111111;
+    --bg-gradient: linear-gradient(135deg, #0a0a0a 0%, #111111 100%);
+    --text-primary: #e5e5e5;
+    --text-secondary: #a3a3a3;
+    --text-muted: #737373;
+    --accent-primary: #60a5fa;
+    --accent-secondary: #93c5fd;
+    --accent-gradient: linear-gradient(90deg, #60a5fa, #93c5fd);
+    --border-color: rgba(96, 165, 250, 0.1);
+    --shadow-light: rgba(0, 0, 0, 0.2);
+    --shadow-medium: rgba(0, 0, 0, 0.3);
+    --glass-bg: rgba(17, 17, 17, 0.8);
+    --glass-border: rgba(96, 165, 250, 0.05);
+    --accent-light: rgba(96, 165, 250, 0.05);
+    --accent-medium: rgba(96, 165, 250, 0.1);
+}
+
+/* Reset and base styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    line-height: 1.6;
+    color: var(--text-primary);
+    background: var(--bg-gradient);
+    min-height: 100vh;
+    transition: all 0.3s ease;
+}
+
+/* Theme Toggle Button - Simple and Clean */
+.theme-toggle {
+    position: fixed;
+    top: 1.5rem;
+    right: 1.5rem;
+    width: 44px;
+    height: 44px;
+    border: 1px solid var(--border-color);
+    border-radius: 8px;
+    background: var(--glass-bg);
+    backdrop-filter: blur(10px);
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    transition: all 0.2s ease;
+    z-index: 1000;
+    box-shadow: 0 2px 8px var(--shadow-light);
+}
+
+.theme-toggle:hover {
+    border-color: var(--accent-primary);
+    background: var(--accent-light);
+    transform: translateY(-1px);
+    box-shadow: 0 4px 12px var(--shadow-medium);
+}
+
+.theme-toggle:active {
+    transform: translateY(0);
+}
+
+/* Container and layout - Simple and centered */
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 2rem 1rem;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.main-content {
+    width: 100%;
+    max-width: 900px;
+    background: var(--glass-bg);
+    backdrop-filter: blur(20px);
+    border-radius: 12px;
+    padding: 3rem;
+    box-shadow: 0 8px 32px var(--shadow-light);
+    border: 1px solid var(--glass-border);
+    position: relative;
+}
+
+/* Simple background pattern */
+.main-content::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: 
+        radial-gradient(circle at 20% 80%, var(--accent-light) 0%, transparent 50%),
+        radial-gradient(circle at 80% 20%, var(--accent-medium) 0%, transparent 50%);
+    pointer-events: none;
+    z-index: 0;
+}
+
+/* Split-screen intro section */
+.intro-section {
+    display: flex;
+    gap: 3rem;
+    align-items: center;
+    margin-bottom: 3rem;
+    position: relative;
+    z-index: 1;
+}
+
+/* Image container - Clean and simple */
+.image-container {
+    flex: 0 0 260px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.profile-image {
+    width: 100%;
+    max-width: 260px;
+    height: 260px;
+    object-fit: cover;
+    border-radius: 8px;
+    box-shadow: 0 8px 24px var(--shadow-medium);
+    border: 1px solid var(--glass-border);
+    transition: all 0.3s ease;
+}
+
+.profile-image:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 32px var(--shadow-medium);
+}
+
+/* Introduction text - Clean typography */
+.intro-text {
+    flex: 1;
+    max-width: 500px;
+}
+
+.headline {
+    font-size: 2.8rem;
+    font-weight: 300;
+    margin-bottom: 0.75rem;
+    color: var(--text-primary);
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+    font-family: 'Playfair Display', serif;
+    position: relative;
+}
+
+.headline::after {
+    content: '';
+    position: absolute;
+    bottom: -8px;
+    left: 0;
+    width: 50px;
+    height: 2px;
+    background: var(--accent-gradient);
+    border-radius: 1px;
+}
+
+.sub-headline {
+    font-size: 1.2rem;
+    font-weight: 500;
+    color: var(--accent-primary);
+    margin-bottom: 1.5rem;
+    line-height: 1.3;
+    letter-spacing: 0.05em;
+    font-family: 'JetBrains Mono', monospace;
+    text-transform: uppercase;
+}
+
+.bio {
+    font-size: 1.1rem;
+    line-height: 1.7;
+    color: var(--text-secondary);
+    font-weight: 400;
+    letter-spacing: 0.01em;
+}
+
+/* Links section - Simple and clean */
+.links-section {
+    display: flex;
+    gap: 2.5rem;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    position: relative;
+    z-index: 1;
+}
+
+.link-button {
+    color: var(--text-secondary);
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 1rem;
+    letter-spacing: 0.05em;
+    position: relative;
+    transition: all 0.3s ease;
+    padding: 0.5rem 0;
+    font-family: 'JetBrains Mono', monospace;
+    text-transform: uppercase;
+}
+
+.link-button::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: var(--accent-gradient);
+    transition: width 0.3s ease;
+    border-radius: 1px;
+}
+
+.link-button:hover {
+    color: var(--accent-primary);
+    transform: translateY(-1px);
+}
+
+.link-button:hover::after {
+    width: 100%;
+}
+
+.link-button:active {
+    transform: translateY(0);
+}
+
+/* Mobile responsiveness */
+@media (max-width: 768px) {
+    .container {
+        padding: 1.5rem 1rem;
+    }
+    
+    .main-content {
+        padding: 2rem;
+        border-radius: 8px;
+    }
+    
+    .intro-section {
+        flex-direction: column;
+        gap: 2rem;
+        text-align: center;
+    }
+    
+    .image-container {
+        flex: none;
+    }
+    
+    .profile-image {
+        max-width: 220px;
+        height: 220px;
+    }
+    
+    .intro-text {
+        max-width: none;
+    }
+    
+    .headline {
+        font-size: 2.2rem;
+    }
+    
+    .headline::after {
+        left: 50%;
+        transform: translateX(-50%);
+    }
+    
+    .sub-headline {
+        font-size: 1.1rem;
+    }
+    
+    .bio {
+        font-size: 1rem;
+    }
+    
+    .links-section {
+        gap: 2rem;
+        margin-top: 2rem;
+    }
+    
+    .link-button {
+        font-size: 0.9rem;
+    }
+    
+    .theme-toggle {
+        top: 1rem;
+        right: 1rem;
+        width: 40px;
+        height: 40px;
+        font-size: 1.1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .container {
+        padding: 1rem 0.5rem;
+    }
+    
+    .main-content {
+        padding: 1.5rem;
+        border-radius: 6px;
+    }
+    
+    .headline {
+        font-size: 1.9rem;
+    }
+    
+    .sub-headline {
+        font-size: 1rem;
+    }
+    
+    .profile-image {
+        max-width: 200px;
+        height: 200px;
+    }
+    
+    .links-section {
+        gap: 1.5rem;
+        flex-direction: column;
+    }
+    
+    .link-button {
+        font-size: 0.85rem;
+    }
+}
+
+/* Focus states for accessibility */
+.link-button:focus {
+    outline: 2px solid var(--accent-primary);
+    outline-offset: 2px;
+}
+
+.theme-toggle:focus {
+    outline: 2px solid var(--accent-primary);
+    outline-offset: 2px;
+}
+
+/* Smooth scrolling */
+html {
+    scroll-behavior: smooth;
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+    width: 6px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--bg-secondary);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--accent-primary);
+    border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--accent-secondary);
+}
+
+/* Animation for theme transition */
+* {
+    transition: color 0.3s ease, background-color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}

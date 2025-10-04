@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Developer Portfolio</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:wght@300;400;500&family=JetBrains+Mono:wght@300;400;500&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Theme Toggle -->
+    <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme">
+        <span class="theme-icon">🌙</span>
+    </button>
+    
+    <div class="container">
+        <main class="main-content">
+            <!-- Split-screen layout for desktop -->
+            <section class="intro-section">
+                <!-- Left side: Image placeholder -->
+                <div class="image-container">
+                    <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzAwIiBoZWlnaHQ9IjMwMCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj48cmVjdCB3aWR0aD0iMTAwJSIgaGVpZ2h0PSIxMDAlIiBmaWxsPSIjZGRkZGRkIi8+PHRleHQgeD0iNTAlIiB5PSI1MCUiIGZvbnQtZmFtaWx5PSJBcmlhbCwgc2Fucy1zZXJpZiIgZm9udC1zaXplPSIxOCIgZmlsbD0iIzk5OTk5OSIgdGV4dC1hbmNob3I9Im1pZGRsZSIgZHk9Ii4zZW0iPkltYWdlIFBsYWNlaG9sZGVyPC90ZXh0Pjwvc3ZnPg==" alt="Professional portrait placeholder" class="profile-image">
+                </div>
+                
+                <!-- Right side: Introduction -->
+                <div class="intro-text">
+                    <h2 class="headline">Aspiring Developer & Lifelong Learner</h2>
+                    <h3 class="sub-headline">Focused on Clean Code and User Experience</h3>
+                    <p class="bio">I have a foundational understanding of HTML, CSS, and vanilla JavaScript. I'm actively working to build out my first set of portfolio projects and excited to contribute to open-source initiatives. I believe in writing accessible and maintainable code.</p>
+                </div>
+            </section>
+            
+            <!-- Links section -->
+            <section class="links-section">
+                <a href="https://github.com" class="link-button github" target="_blank" rel="noopener noreferrer">
+                    GitHub
+                </a>
+                <a href="https://linkedin.com" class="link-button linkedin" target="_blank" rel="noopener noreferrer">
+                    LinkedIn
+                </a>
+                <a href="https://x.com" class="link-button twitter" target="_blank" rel="noopener noreferrer">X</a>
+                <a href="mailto:your.email@example.com" class="link-button email">
+                    Email
+                </a>
+            </section>
+        </main>
+    </div>
+    
+    <script>
+        // Theme toggle functionality
+        const themeToggle = document.getElementById('themeToggle');
+        const themeIcon = themeToggle.querySelector('.theme-icon');
+        const body = document.body;
+        
+        // Check for saved theme preference or default to light mode
+        const currentTheme = localStorage.getItem('theme') || 'light';
+        body.setAttribute('data-theme', currentTheme);
+        updateThemeIcon(currentTheme);
+        
+        themeToggle.addEventListener('click', () => {
+            const currentTheme = body.getAttribute('data-theme');
+            const newTheme = currentTheme === 'light' ? 'dark' : 'light';
+            
+            body.setAttribute('data-theme', newTheme);
+            localStorage.setItem('theme', newTheme);
+            updateThemeIcon(newTheme);
+        });
+        
+        function updateThemeIcon(theme) {
+            themeIcon.textContent = theme === 'light' ? '🌙' : '☀️';
+        }
+    </script>
+</body>
+</html>
