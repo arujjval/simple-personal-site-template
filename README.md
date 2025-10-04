@@ -1,13 +1,13 @@
-# ☕ Simple Developer Portfolio Template
+# Simple Personal Website Template
 
-A clean, minimalist, and high-performance template designed for personal developer portfolios and project sites. It is built to be simple to use, **fast to load**, and incredibly **easy to customize**.
+A clean, minimalist, and high-performance template designed for personal websites. It is built to be simple to use, **fast to load**, and incredibly **easy to customize**.
 
-### ✨ Why This Template?
+### Why This Template?
 
 This template is for developers who prioritize speed and elegance over bloat and complexity.
 
 * **Simple & Fast:** Built using only **plain HTML, CSS, and JavaScript**. There are no heavy frameworks or external libraries to slow your site down.
-* **Elegant Design:** A modern, **minimalist aesthetic** that puts the entire focus on your work and professional skills.
+* **Elegant Design:** A modern, **minimalist aesthetic** that puts the entire focus on your introduction and important links.
 * **Developer-Friendly:** The code is well-structured and easy to read, making it a perfect starting point for any personal developer site.
 
 ---
